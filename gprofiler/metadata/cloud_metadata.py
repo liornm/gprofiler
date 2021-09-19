@@ -15,6 +15,11 @@ logger = get_logger_adapter(__name__)
 
 
 @dataclass
+class InstanceMetadataBase:
+    provider: str
+
+
+@dataclass
 class AwsInstanceMetadata(InstanceMetadataBase):
     region: str
     zone: str
