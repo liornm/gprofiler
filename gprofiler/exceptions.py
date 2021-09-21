@@ -46,3 +46,6 @@ class UninitializedStateException(Exception):
 
 class StateAlreadyInitializedException(Exception):
     pass
+
+
+class BadResponseCode(Exception):
