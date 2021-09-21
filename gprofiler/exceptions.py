@@ -49,4 +49,9 @@ class StateAlreadyInitializedException(Exception):
 
 
 class BadResponseCode(Exception):
+    def __init__(self, response_code: int):
+        super().__init__(f"Got a bad HTTP response code {response_code}")
+
+
+class ThreadStopTimeoutError(Exception):
     pass
