@@ -49,3 +49,4 @@ class StateAlreadyInitializedException(Exception):
 
 
 class BadResponseCode(Exception):
+    pass
