@@ -5,6 +5,14 @@ from typing import Dict, List, Optional
 import requests
 from requests import Response
 
+from gprofiler.exceptions import BadResponseCode
+from gprofiler.log import get_logger_adapter
+from gprofiler.metadata.metadata_type import Metadata
+
+METADATA_REQUEST_TIMEOUT = 5
+
+logger = get_logger_adapter(__name__)
+
 
 @dataclass
 class InstanceMetadataBase:
