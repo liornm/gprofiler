@@ -25,6 +25,7 @@ from gprofiler.log import RemoteLogsHandler, initial_root_logger_setup
 from gprofiler.merge import ProcessToStackSampleCounters
 from gprofiler.metadata.metadata_collector import get_current_metadata, get_static_metadata
 from gprofiler.metadata.metadata_type import Metadata
+from gprofiler.metadata.system_metadata import get_hostname, get_run_mode, get_static_system_info
 from gprofiler.profilers.java import JavaProfiler
 from gprofiler.profilers.perf import SystemProfiler
 from gprofiler.profilers.php import DEFAULT_PROCESS_FILTER, PHPSpyProfiler
