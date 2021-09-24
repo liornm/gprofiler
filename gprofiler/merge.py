@@ -218,7 +218,6 @@ def _make_profile_metadata(docker_client: Optional[DockerClient], add_container_
         container_names = []
         enabled = False
 
-        }
     profile_metadata = {
         'containers': container_names,
         'container_names_enabled': enabled,
