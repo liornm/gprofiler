@@ -220,7 +220,6 @@ def _make_profile_metadata(docker_client: Optional[DockerClient], add_container_
 
     return "# " + json.dumps(
         {
-            'containers': container_names,
             'hostname': get_hostname(),
             'container_names_enabled': enabled,
         }
