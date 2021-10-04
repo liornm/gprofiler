@@ -13,7 +13,7 @@ import sys
 import time
 from pathlib import Path
 from threading import Event
-from typing import Callable, Dict, Optional
+from typing import Callable, Dict, Optional, Union
 
 import configargparse
 from requests import RequestException, Timeout
