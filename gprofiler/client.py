@@ -6,7 +6,7 @@ import datetime
 import gzip
 import json
 from io import BytesIO
-from typing import Dict, List, Optional, Tuple
+from typing import TYPE_CHECKING, Dict, List, Optional, Tuple
 
 import requests
 from requests import Session
