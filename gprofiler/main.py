@@ -23,6 +23,7 @@ from gprofiler.client import DEFAULT_UPLOAD_TIMEOUT, GRANULATE_SERVER_HOST, APIC
 from gprofiler.docker_client import DockerClient
 from gprofiler.log import RemoteLogsHandler, initial_root_logger_setup
 from gprofiler.merge import ProcessToStackSampleCounters
+from gprofiler.metadata.metadata_collector import get_current_metadata, get_static_metadata
 from gprofiler.profilers.java import JavaProfiler
 from gprofiler.profilers.perf import SystemProfiler
 from gprofiler.profilers.php import DEFAULT_PROCESS_FILTER, PHPSpyProfiler
