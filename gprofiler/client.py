@@ -6,7 +6,7 @@ import datetime
 import gzip
 import json
 from io import BytesIO
-from typing import Dict, List, Optional, Tuple
+from typing import TYPE_CHECKING, Dict, List, Optional, Tuple
 
 import requests
 from requests import Session
@@ -14,7 +14,10 @@ from requests import Session
 from gprofiler import __version__
 from gprofiler.exceptions import APIError
 from gprofiler.log import get_logger_adapter
-from gprofiler.utils import get_iso8601_format_time
+from gprofiler.utils import get_iso8601_format_time, get_iso8601_format_time_from_epoch_time
+
+if TYPE_CHECKING:
+    from gprofiler.system_metrics import Metrics
 
 logger = get_logger_adapter(__name__)
 
