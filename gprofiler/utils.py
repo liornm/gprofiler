@@ -9,23 +9,20 @@ import fcntl
 import glob
 import logging
 import os
-import platform
 import random
 import re
 import shutil
 import socket
 import string
 import subprocess
-import sys
 import time
 from functools import lru_cache
 from pathlib import Path
 from subprocess import CompletedProcess, Popen, TimeoutExpired
 from tempfile import TemporaryDirectory
 from threading import Event, Thread
-from typing import Callable, List, Optional, Tuple, Union
+from typing import Callable, List, Optional, Union
 
-import distro  # type: ignore
 import importlib_resources
 import psutil
 from psutil import Process
