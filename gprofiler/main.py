@@ -23,6 +23,9 @@ from gprofiler.client import DEFAULT_UPLOAD_TIMEOUT, GRANULATE_SERVER_HOST, APIC
 from gprofiler.docker_client import DockerClient
 from gprofiler.log import RemoteLogsHandler, initial_root_logger_setup
 from gprofiler.merge import ProcessToStackSampleCounters
+from gprofiler.metadata.metadata_collector import get_current_metadata, get_static_metadata
+from gprofiler.metadata.metadata_type import Metadata
+from gprofiler.metadata.system_metadata import get_hostname, get_run_mode, get_static_system_info
 from gprofiler.profilers.java import JavaProfiler
 from gprofiler.profilers.perf import SystemProfiler
 from gprofiler.profilers.php import DEFAULT_PROCESS_FILTER, PHPSpyProfiler
@@ -38,13 +41,10 @@ from gprofiler.utils import (
     CpuUsageLogger,
     TemporaryDirectoryWithMode,
     atomically_symlink,
-    get_hostname,
     get_iso8601_format_time,
-    get_run_mode,
     grab_gprofiler_mutex,
     is_root,
     is_running_in_init_pid,
-    log_system_info,
     reset_umask,
     resource_path,
     run_process,
@@ -539,6 +539,14 @@ def parse_cmd_args():
         default=True,
         dest="pid_ns_check",
         help="Disable host PID NS check on startup",
+    )
+
+    parser.add_argument(
+        "--disable-metrics-collection",
+        action="store_false",
+        default=True,
+        dest="collect_metrics",
+        help="Disable sending system metrics to the Performance Studio",
     )
 
     parser.add_argument(

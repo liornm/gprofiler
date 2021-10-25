@@ -12,6 +12,14 @@ DEFAULT_POLLING_INTERVAL_SECONDS = 5
 STOP_TIMEOUT_SECONDS = 30
 
 
+@dataclass
+class Metrics:
+    # The average CPU usage between gProfiler cycles
+    cpu_avg: Optional[float]
+    # The average RAM usage between gProfiler cycles
+    mem_avg: Optional[float]
+
+
 class SystemMetricsMonitorBase(metaclass=ABCMeta):
     @abstractmethod
     def start(self):
