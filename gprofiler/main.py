@@ -34,6 +34,7 @@ from gprofiler.profilers.python import PythonProfiler
 from gprofiler.profilers.registry import get_profilers_registry
 from gprofiler.profilers.ruby import RbSpyProfiler
 from gprofiler.state import State, init_state
+from gprofiler.system_metrics import NoopSystemMetricsMonitor, SystemMetricsMonitor, SystemMetricsMonitorBase
 from gprofiler.types import positive_integer
 from gprofiler.utils import (
     TEMPORARY_STORAGE_PATH,
